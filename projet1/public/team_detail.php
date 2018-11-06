@@ -20,5 +20,18 @@ $team = $tm->findById($id);
       <strong><?php echo $team->getCoach(); ?></strong>
     </p>
 
+    <h2>Enregistrement d'un joueur</h2>
+    <form id="playerForm">
+      <input id="name" type="text" placeholder="Nom">
+      <select id="position">
+        <option>Gardien</option>
+        <option>Défenseur</option>
+        <option>Milieu</option>
+        <option>Attaquant</option>
+      </select>
+      <input id="submit" type="submit" value="Enregistrer">
+    </form>
+
+    <script src="js/app.js"></script>
   </body>
 </html>

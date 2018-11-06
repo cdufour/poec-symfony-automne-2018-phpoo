@@ -8,6 +8,8 @@ class Team {
   private $stadium;
   private $coach;
 
+  private $players;
+
   private $pdo; // utile pour la communication avec DB
 
   function __construct(
@@ -49,6 +51,10 @@ class Team {
 
   public function getCoach() {
     return $this->coach;
+  }
+
+  public function getPlayers() {
+    return $this->players;
   }
 
   // setters (mutateurs) ECRITURE
