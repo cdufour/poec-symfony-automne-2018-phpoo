@@ -8,7 +8,9 @@ class Player {
   private $team; // objet de type Team
   private $pdo;
 
-  function __construct($name, $position, Team $team) {
+  function __construct($name, $position, Team $team = null) {
+    // on rend le 3ieme argument optionnel en lui affectant
+    // une valeur par défaut
     $this->name = $name;
     $this->position = $position;
     $this->team = $team;

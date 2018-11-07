@@ -15,7 +15,10 @@ $t->setId(1);
 // $tm = new TeamManager();
 // var_dump($tm->findById(4));
 
-$player = new Player('Dybala', 'Milieu', $t);
-var_dump($player->save());
+// $player = new Player('Dybala', 'Milieu', $t);
+// var_dump($player->save());
+
+$message = array('message' => 'coucou', 'test' => true);
+echo json_encode($message);
 
 ?>

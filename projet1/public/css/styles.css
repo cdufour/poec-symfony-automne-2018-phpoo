@@ -1,0 +1,16 @@
+nav ul {
+  list-style: none
+}
+
+nav ul li {
+  display: inline-block;
+  padding-right: 20px
+}
+
+footer nav {
+  font-size: .7rem
+}
+
+footer nav a {
+  color: orange
+}

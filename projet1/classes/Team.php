@@ -1,5 +1,7 @@
 <?php
 
+// require_once 'Player';
+
 class Team {
   private $id;
   private $name;
@@ -8,7 +10,7 @@ class Team {
   private $stadium;
   private $coach;
 
-  private $players;
+  private $players = []; // tableau vide
 
   private $pdo; // utile pour la communication avec DB
 
@@ -83,6 +85,11 @@ class Team {
   public function setCoach($coach) {
     $this->coach = $coach;
     return $this->coach;
+  }
+
+  public function addPlayer(Player $player) {
+    // push de l'objet Player dans le tableau
+    $this->players[] = $player;
   }
 
   public function save() {

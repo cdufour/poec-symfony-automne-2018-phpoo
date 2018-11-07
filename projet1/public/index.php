@@ -1,4 +1,7 @@
 <?php
+  error_reporting(E_ALL);
+  ini_set('display_errors', 'on');
+
   require_once '../classes/TeamManager.php';
   $tm = new TeamManager();
   $teams = $tm->findAll(); // renvoie un tableau d'objets Team
@@ -9,9 +12,10 @@
   <head>
     <meta charset="utf-8">
     <title>POO Projet 1</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <?php include 'css.inc.php' ?>
   </head>
   <body>
+    <?php include 'menu.inc.php' ?>
     <h1>POO Projet 1</h1>
 
     <h2>Enregistrement une équipe</h2>
@@ -51,6 +55,10 @@
       ?>
     </tbody>
   </table>
+
+  <footer>
+    <?php include 'menu.inc.php' ?>
+  </footer>
 
   </body>
 </html>
