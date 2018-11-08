@@ -46,6 +46,12 @@ class PlayerManager {
     return $player;
   }
 
+  public function deleteById($id) {
+    $query = $this->pdo->prepare(
+      'DELETE FROM player WHERE id = :id');
+    return $query->execute([':id' => $id]);
+  }
+
 }
 
 ?>

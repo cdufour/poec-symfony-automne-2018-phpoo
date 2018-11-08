@@ -8,7 +8,10 @@ const submit = playerForm.querySelector('#submit');
 const teamId = playerForm.querySelector('#team_id');
 const playersTable =
   document.querySelector('#playersTable tbody');
-const btnsEdit = playersTable.querySelectorAll('.btnEdit');
+
+let btnsEdit = null; // variable servant à collecter les boutons d'édition
+let btnsDelete = null;
+
 
 // mode insertion par défaut
 // aucun joueur n'est pas en cours d'édition
@@ -37,8 +40,6 @@ submit.addEventListener('click', e => {
     player.id = editedPlayerId;
   }
 
-  console.log(player);
-
   // requête ajax
   fetch(url, {
     headers: { 'Content-Type' : 'application/json' },
@@ -47,8 +48,6 @@ submit.addEventListener('click', e => {
   })
   .then(res => res.text())
   .then(res => {
-    console.log(res);
-
     // Mise à jour le DOMs
     if (editedPlayerId == null) {
         // mode insertion : on ajoute un ligne au tableau
@@ -60,14 +59,22 @@ submit.addEventListener('click', e => {
           <td>${player.name}</td>
           <td>${player.position}</td>
           <td>
-            <button data-id="${res}" class="btn btn-warning btn-sm">Editer</button>
-            <button data-id="${res}" class="btn btn-danger btn-sm">Supprimer</button>
+            <button data-id="${res}" class="btnEdit btn btn-warning btn-sm">Editer</button>
+            <button data-id="${res}" class="btnDelete btn btn-danger btn-sm">Supprimer</button>
           </td>
         </tr>
       `;
       html += tr; // concaténation du balisage html actuel
       // avec la nouvelle ligne
       playersTable.innerHTML = html; // mise à jour du DOM
+      // cette affection remplace une partie du DOM
+      // les écouteurs d'événements précédemment placés
+      // sur ce DOM sont détruits. On doit remettre en place
+      // l'écoute événementielle.
+      // on rappelle la fonctionn addEventsToBtns() pour
+      // réintroduire les écouteurs d'événements sur les boutons
+      // Editer et supprimer
+      addEventsToBtns();
 
     } else {
       // mode édition: on remplace les informations
@@ -79,33 +86,48 @@ submit.addEventListener('click', e => {
       clear();
     }
 
-
-
   })
 
 }) // fin eventListener
 
-btnsEdit.forEach(btn => {
-  btn.addEventListener('click', e => {
+function addEventsToBtns() {
+  // on récupére l'ensemble des boutons Editer et Supprimer
+  btnsEdit = playersTable.querySelectorAll('.btnEdit');
+  btnsDelete = playersTable.querySelectorAll('.btnDelete');
 
-    editedRow = e.target.parentNode.parentNode;
+  btnsEdit.forEach(btn => {
+    btn.addEventListener('click', e => {
+      editedRow = e.target.parentNode.parentNode;
+      let tr = e.target.parentNode.parentNode;
 
-    let tr = e.target.parentNode.parentNode;
+      let player = {
+        name: tr.children[0].innerText.trim(),
+        position: tr.children[1].innerText.trim(),
+        id: e.target.dataset.id
+      }
+      editedPlayerId = player.id;
+      name.value = player.name;
+      position.value = player.position;
+      submit.value = 'Mettre à jour';
+    }) // fin EventListener
+  }) // fin forEach
 
-    let player = {
-      name: tr.children[0].innerText.trim(),
-      position: tr.children[1].innerText.trim(),
-      id: e.target.dataset.id
-    }
-    // console.log(player);
+  btnsDelete.forEach(btn => {
+    btn.addEventListener('click', e => {
+      fetch('player_delete.php?id=' + e.target.dataset.id)
+        .then(res => res.text())
+        .then(res => {
 
-    editedPlayerId = player.id;
-    name.value = player.name;
-    position.value = player.position;
-    submit.value = 'Mettre à jour';
+          // mettre à jour le DOM
+          if (res == 1) {
+            e.target.parentNode.parentNode.remove();
+          }
 
-  })
-})
+        })
+    }) // fin EventListener
+  }) // fin forEach
+} // fin addEventsToBtns
+
 
 function clear() {
   editedPlayerId = null;
@@ -114,5 +136,11 @@ function clear() {
   position.value = 'Gardien';
   submit.value = 'Enregistrer';
 }
+
+function init() {
+  addEventsToBtns();
+}
+
+init();
 
 })()

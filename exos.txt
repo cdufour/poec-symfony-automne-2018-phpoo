@@ -14,3 +14,20 @@ Le page players.php affichera le tableau (nom, position) de tous
 les joueurs enregistrés dans la base de données (toute équipe confondue)
 
 Suggestion: créer et utiliser une classe PlayerManager.php
+
+----------------------------------------------------------------
+
+Dans la page team_detail.php:
+A droite du tableau des joueurs, afficher la liste
+des autres équipes évoluant dans la même ligue.
+Le nom de l'équipe sera un lien vers la page de détail correspondante.
+
+
+Suggestion pour le mise en page:
+ - tableau des joueurs: 9 colonnes
+ - liste des autres équipes: 3 colonnes
+
+
+
+
+ 
