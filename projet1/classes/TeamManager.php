@@ -48,6 +48,13 @@ class TeamManager {
 
     $query->execute(array(':id' => $id));
     $row = $query->fetch(PDO::FETCH_OBJ);
+    // fetch renvoie false quand aucun résultat n'est trouvé
+
+    // dans le cas où l'id recherché n'existe pas en
+    // DB,  findById renvoie null
+    if (!$row) {
+      return null;
+    }
 
     $team = new Team(
       $row->name, intval($row->yearFoundation), $row->league, $row->stadium, $row->coach);

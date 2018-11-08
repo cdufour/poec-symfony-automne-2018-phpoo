@@ -2,12 +2,10 @@
 require_once 'classes/Player.php';
 require_once 'classes/TeamManager.php';
 
-// Problème, $_POST est vide dans le cas d'une requête
-// ajax
+// Problème, $_POST est vide dans le cas d'une requête ajax
 // solution: file_get_contents
 // https://codepen.io/dericksozo/post/fetch-api-json-php
 
-// recevoir les données postées via ajax (api fetch)
 // file_get_contents renvoie le corps de la requête post
 // dans notre exemple, une chaîne au format JSON
 $request_body = file_get_contents('php://input');
@@ -25,7 +23,6 @@ $player = new Player(
   $team
 );
 
-$player->save();
-echo 'joueur enregistré';
+echo $player->save(); // renvoie l'id du joueur enregistré
 
 ?>

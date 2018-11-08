@@ -42,11 +42,12 @@ $team = $tm->findByIdJoin($id);
 
     <!-- Affichage des joueurs -->
     <?php if(sizeof($team->getPlayers()) > 0): ?>
-    <table class="table table-striped table-bordered">
+    <table id="playersTable" class="table table-striped table-bordered">
       <thead>
         <tr>
           <th>Nom</th>
           <th>Poste</th>
+          <th>Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -54,12 +55,19 @@ $team = $tm->findByIdJoin($id);
         <tr>
           <td><?php echo $player->getName(); ?></td>
           <td><?php echo $player->getPosition(); ?></td>
+          <td>
+            <button
+              data-id="<?php echo $player->getId(); ?>"
+              class="btn btn-warning btn-sm btnEdit">Editer</button>
+            <button
+              data-id="<?php echo $player->getId(); ?>"
+              class="btn btn-danger btn-sm btnDelete">Supprimer</button>
+          </td>
         </tr>
       <?php endforeach; ?>
       </tbody>
     </table>
   <?php endif; ?>
-
 
     <script src="js/app.js"></script>
   </body>

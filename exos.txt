@@ -1,0 +1,16 @@
+*** Projet 1 Exos ***
+
+Sur index.php:
+Ajouter un lien "supprimer" pour chaque équipe
+
+Gérer la suppression
+Suggestion: créer un fichier team_delete.php
+
+----------------------------------------------------------------
+
+Ajouter dans le menu un lien "Joueurs" vers une page players.php
+
+Le page players.php affichera le tableau (nom, position) de tous
+les joueurs enregistrés dans la base de données (toute équipe confondue)
+
+Suggestion: créer et utiliser une classe PlayerManager.php

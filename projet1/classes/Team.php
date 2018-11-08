@@ -71,8 +71,8 @@ class Team {
     return $this->name; // retour facultatif
   }
   public function setYearFoundation($yearFoundation) {
-    $this->foudationYear = $yearFoundation;
-    return $this->foundationYear;
+    $this->yearFoundation = $yearFoundation;
+    return $this->yearFoundation;
   }
   public function setLeague($league) {
     $this->league = $league;
@@ -107,6 +107,34 @@ class Team {
     // éxecute la requête sql et renvoie true si réussie
     return $query->execute();
 
+  }
+
+  public function update() {
+    $query = $this->pdo->prepare(
+      'UPDATE team
+        SET
+          name = :name,
+          yearFoundation = :yearFoundation,
+          league = :league,
+          stadium = :stadium,
+          coach = :coach
+        WHERE id = :id
+    ');
+
+    return $query->execute([
+      ':name' => $this->name,
+      ':yearFoundation' => $this->yearFoundation,
+      ':league' => $this->league,
+      ':stadium' => $this->stadium,
+      ':coach' => $this->coach,
+      ':id' => $this->id
+    ]);
+  }
+
+  public function delete() {
+    $query = $this->pdo->prepare(
+      'DELETE FROM team WHERE id = :id');
+    return $query->execute([':id' => $this->id]);
   }
 
 

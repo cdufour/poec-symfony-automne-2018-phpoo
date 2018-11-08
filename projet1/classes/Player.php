@@ -53,11 +53,28 @@ class Player {
       'INSERT INTO player (name, position, team_id)
       VALUES (:name, :position, :team_id)');
 
-    return $query->execute(array(
+    $query->execute(array(
       ':name' => $this->name,
       ':position' => $this->position,
       ':team_id' => $this->team->getId()
     ));
+
+    // on retourne l'identifiant du joueur qu'on vient
+    // d'enregistrer en DB
+    return $this->pdo->lastInsertId();
+  }
+
+  public function update() {
+    $query = $this->pdo->prepare(
+      'UPDATE player
+       SET name = :name, position = :position
+       WHERE id = :id');
+
+    return $query->execute([
+      ':name' => $this->name,
+      ':position' => $this->position,
+      ':id' => $this->id
+    ]);
   }
 
 }

@@ -37,6 +37,7 @@
           <th>Championnat</th>
           <th>Stade</th>
           <th>Entraîneur</th>
+          <th>Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -49,6 +50,10 @@
         $html .= '<td>' . $team->getLeague() . '</td>';
         $html .= '<td>' . $team->getStadium() . '</td>';
         $html .= '<td>' . $team->getCoach() . '</td>';
+        $html .= '<td>';
+        $html .= '<a class="btn btn-warning btn-sm" href="team_update.php?id='. $team->getId() .'">Editer</a>';
+        $html .= '&nbsp;&nbsp;<a class="btn btn-danger btn-sm" href="team_delete.php?id='. $team->getId() .'">Supprimer</a>';
+        $html .= '</td>';
         $html .= '</tr>';
       }
       echo $html;
