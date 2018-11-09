@@ -14,5 +14,6 @@ Bonus:
 - Permettre l'association de plusieurs photos à une annonce
 - Permettre d'évaluer les annonces: le client consultant
 une annonce pourra la "liker" (coeur clicable par exemple)
+A faire en ajax de préférence.
 - L'interface affichera en premier les annonces les plus
 appréciées
