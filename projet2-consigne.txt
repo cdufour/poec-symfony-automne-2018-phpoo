@@ -1,0 +1,18 @@
+*** Projet 2 ***
+
+Créer un système permettant d'enregistrer
+et de consulter des annonces de type
+don de matériel/vêtements/etc.
+
+Prévoir côté FRONT une recherche multicritères
+ex:
+- par type/Catégorie d'objets
+- par lieu
+- par mots-clés (nous verrons cela en cours)
+
+Bonus:
+- Permettre l'association de plusieurs photos à une annonce
+- Permettre d'évaluer les annonces: le client consultant
+une annonce pourra la "liker" (coeur clicable par exemple)
+- L'interface affichera en premier les annonces les plus
+appréciées

@@ -19,12 +19,14 @@
     <h1>POO Projet 1</h1>
 
     <h2>Enregistrement une équipe</h2>
-    <form method="post" action="../process_team.php">
+    <form method="post"
+      action="../process_team.php" enctype="multipart/form-data">
       <input type="text" name="name" placeholder="Nom">
       <input type="text" name="yearFoundation" placeholder="Année de création">
       <input type="text" name="league" placeholder="Championnat">
       <input type="text" name="stadium" placeholder="Nom du stade">
       <input type="text" name="coach" placeholder="Entraîneur">
+      <input type="file" name="logo" id="logo">
       <input type="submit" name="submit" value="Enregistrer">
     </form>
 

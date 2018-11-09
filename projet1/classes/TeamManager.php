@@ -31,7 +31,7 @@ class TeamManager {
     $teams = [];
     foreach($rows as $row) {
       $team = new Team(
-        $row->name, $row->yearFoundation, $row->league, $row->stadium, $row->coach);
+        $row->name, $row->yearFoundation, $row->league, $row->stadium, $row->coach, $row->logo);
 
       // on ajoute l'id à l'objet de manière à cette info
       // soit disponible ailleurs dans l'application
@@ -57,7 +57,7 @@ class TeamManager {
     }
 
     $team = new Team(
-      $row->name, intval($row->yearFoundation), $row->league, $row->stadium, $row->coach);
+      $row->name, intval($row->yearFoundation), $row->league, $row->stadium, $row->coach, $row->logo);
 
     $team->setId(intval($row->id));
     return $team;
@@ -72,6 +72,7 @@ class TeamManager {
       league,
       stadium,
       coach,
+      logo,
       player.id AS playerId,
       player.name AS playerName,
       position,
@@ -93,7 +94,8 @@ class TeamManager {
       $rows[0]->yearFoundation,
       $rows[0]->league,
       $rows[0]->stadium,
-      $rows[0]->coach
+      $rows[0]->coach,
+      $rows[0]->logo
     );
     $team->setId($rows[0]->teamId);
 
@@ -110,5 +112,29 @@ class TeamManager {
 
     return $team;
   }
+
+  public function findByLeague($league) {
+    $query = $this->pdo->prepare(
+      'SELECT * FROM team WHERE league = :league');
+    $query->execute([':league' => $league]);
+    $rows = $query->fetchAll(PDO::FETCH_OBJ);
+
+    $teams = [];
+    foreach($rows as $row) {
+      $team = new Team(
+        $row->name,
+        intval($row->yearFoundation),
+        $row->league,
+        $row->stadium,
+        $row->coach,
+        $row->logo);
+
+      $team->setId($row->id);
+      $teams[] = $team; // push
+    }
+    return $teams;
+
+  }
+
 } // fin classe
 ?>

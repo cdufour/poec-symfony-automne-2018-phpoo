@@ -9,18 +9,20 @@ class Team {
   private $league;
   private $stadium;
   private $coach;
+  private $logo;
 
   private $players = []; // tableau vide
 
   private $pdo; // utile pour la communication avec DB
 
   function __construct(
-    $name, $yearFoundation, $league, $stadium, $coach) {
+    $name, $yearFoundation, $league, $stadium, $coach, $logo = null) {
       $this->name = $name;
       $this->yearFoundation = $yearFoundation;
       $this->league = $league;
       $this->stadium = $stadium;
       $this->coach = $coach;
+      $this->logo = $logo;
 
       // injection de dépendance (DI)
       // instatiation d'une classe A dans le constructeur
@@ -55,6 +57,10 @@ class Team {
     return $this->coach;
   }
 
+  public function getLogo() {
+    return $this->logo;
+  }
+
   public function getPlayers() {
     return $this->players;
   }
@@ -86,6 +92,10 @@ class Team {
     $this->coach = $coach;
     return $this->coach;
   }
+  public function setLogo($logo) {
+    $this->logo = $logo;
+    return $this->logo;
+  }
 
   public function addPlayer(Player $player) {
     // push de l'objet Player dans le tableau
@@ -95,14 +105,15 @@ class Team {
   public function save() {
     // enregistrement en base de données
     $query = $this->pdo->prepare(
-      'INSERT INTO team(name, yearFoundation, league, stadium, coach)
-      VALUES (:name, :yearFoundation, :league, :stadium, :coach)');
+      'INSERT INTO team(name, yearFoundation, league, stadium, coach, logo)
+      VALUES (:name, :yearFoundation, :league, :stadium, :coach, :logo)');
 
     $query->bindParam(':name', $this->name);
     $query->bindParam(':yearFoundation', $this->yearFoundation);
     $query->bindParam(':league', $this->league);
     $query->bindParam(':stadium', $this->stadium);
     $query->bindParam(':coach', $this->coach);
+    $query->bindParam(':logo', $this->logo);
 
     // éxecute la requête sql et renvoie true si réussie
     return $query->execute();
