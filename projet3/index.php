@@ -1,5 +1,6 @@
 <?php
 $search = null;
+$category_id = null;
 
 try {
   $pdo = new PDO('mysql:host=localhost;dbname=projet3', 'root', 'root');
@@ -74,9 +75,11 @@ if (isset($_GET['submit'])) {
       <select name="category">
         <option value="0">Choisir une catégorie</option>
         <?php foreach($categories as $cat): ?>
-          <option value="<?php echo $cat->id; ?>">
-            <?php echo ucfirst($cat->name); ?>
-          </option>
+            <option
+              <?php if($cat->id == $category_id) echo 'selected'; ?>
+              value="<?php echo $cat->id; ?>">
+              <?php echo ucfirst($cat->name); ?>
+            </option>
         <?php endforeach; ?>
       </select>
       <input type="submit" name="submit">
