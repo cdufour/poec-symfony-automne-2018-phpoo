@@ -20,3 +20,16 @@ body {
   border-bottom: 1px white solid;
   cursor: pointer
 }
+
+span#clear {
+  font-size: .5rem;
+  color: #ccc;
+  cursor: pointer;
+  position: relative;
+  left: -14px;
+  z-index: 1
+}
+
+span#clear:hover {
+  color: #555;
+}

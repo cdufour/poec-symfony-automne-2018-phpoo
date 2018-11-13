@@ -23,6 +23,7 @@ try {
         id="category"
         type="text"
         placeholder="Saisir une catégorie">
+      <span id="clear">X</span>
     </form>
 
     <ul id="suggestions">

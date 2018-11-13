@@ -3,9 +3,9 @@
   const category = document.querySelector('#category');
   const suggestions = document.querySelector('#suggestions');
   const proverbs = document.querySelector('#proverbs');
+  const clear = document.querySelector('#clear');
 
   let historySearch = [];
-
 
   category.addEventListener('keyup', e => {
     if (category.value.length >= minLength) {
@@ -15,6 +15,10 @@
       suggestions.innerHTML = '';
       proverbs.innerHTML = '';
     }
+  })
+
+  clear.addEventListener('click', e => {
+    category.value = '';
   })
 
   function getSuggestions() {
