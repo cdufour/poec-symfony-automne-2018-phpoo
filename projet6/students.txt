@@ -1,0 +1,111 @@
+Nom,Prénom,Cursus
+Baggio,Roberto,DNT1
+Lerouge,Robert,POEC Symfony
+Gogol,Alex,DNT2
+El Bakari,Jean-Francis,POEC Symfony
+El Zonzon,Victor,DNT1
+Levert,Yacine,POEC Symfony
+Di Francesco,Philippe,DNT2
+Lerouge,Robert,POEC Symfony
+Lenoir,Vincent,DNT1
+El Karlouch,René,POEC Symfony
+Baggio,Roberto,DNT1
+Lerouge,Robert,POEC Symfony
+Gogol,Alex,DNT2
+El Bakari,Jean-Francis,POEC Symfony
+El Zonzon,Victor,DNT1
+Levert,Yacine,POEC Symfony
+Di Francesco,Philippe,DNT2
+Lerouge,Robert,POEC Symfony
+Lenoir,Vincent,DNT1
+El Karlouch,René,POEC Symfony
+Baggio,Roberto,DNT1
+Lerouge,Robert,POEC Symfony
+Gogol,Alex,DNT2
+El Bakari,Jean-Francis,POEC Symfony
+El Zonzon,Victor,DNT1
+Levert,Yacine,POEC Symfony
+Di Francesco,Philippe,DNT2
+Lerouge,Robert,POEC Symfony
+Lenoir,Vincent,DNT1
+El Karlouch,René,POEC Symfony
+Baggio,Roberto,DNT1
+Lerouge,Robert,POEC Symfony
+Gogol,Alex,DNT2
+El Bakari,Jean-Francis,POEC Symfony
+El Zonzon,Victor,DNT1
+Levert,Yacine,POEC Symfony
+Di Francesco,Philippe,DNT2
+Lerouge,Robert,POEC Symfony
+Lenoir,Vincent,DNT1
+El Karlouch,René,POEC Symfony
+Baggio,Roberto,DNT1
+Lerouge,Robert,POEC Symfony
+Gogol,Alex,DNT2
+El Bakari,Jean-Francis,POEC Symfony
+El Zonzon,Victor,DNT1
+Levert,Yacine,POEC Symfony
+Di Francesco,Philippe,DNT2
+Lerouge,Robert,POEC Symfony
+Lenoir,Vincent,DNT1
+El Karlouch,René,POEC Symfony
+Baggio,Roberto,DNT1
+Lerouge,Robert,POEC Symfony
+Gogol,Alex,DNT2
+El Bakari,Jean-Francis,POEC Symfony
+El Zonzon,Victor,DNT1
+Levert,Yacine,POEC Symfony
+Di Francesco,Philippe,DNT2
+Lerouge,Robert,POEC Symfony
+Lenoir,Vincent,DNT1
+El Karlouch,René,POEC Symfony
+Baggio,Roberto,DNT1
+Lerouge,Robert,POEC Symfony
+Gogol,Alex,DNT2
+El Bakari,Jean-Francis,POEC Symfony
+El Zonzon,Victor,DNT1
+Levert,Yacine,POEC Symfony
+Di Francesco,Philippe,DNT2
+Lerouge,Robert,POEC Symfony
+Lenoir,Vincent,DNT1
+El Karlouch,René,POEC Symfony
+Baggio,Roberto,DNT1
+Lerouge,Robert,POEC Symfony
+Gogol,Alex,DNT2
+El Bakari,Jean-Francis,POEC Symfony
+El Zonzon,Victor,DNT1
+Levert,Yacine,POEC Symfony
+Di Francesco,Philippe,DNT2
+Lerouge,Robert,POEC Symfony
+Lenoir,Vincent,DNT1
+El Karlouch,René,POEC Symfony
+Baggio,Roberto,DNT1
+Lerouge,Robert,POEC Symfony
+Gogol,Alex,DNT2
+El Bakari,Jean-Francis,POEC Symfony
+El Zonzon,Victor,DNT1
+Levert,Yacine,POEC Symfony
+Di Francesco,Philippe,DNT2
+Lerouge,Robert,POEC Symfony
+Lenoir,Vincent,DNT1
+El Karlouch,René,POEC Symfony
+Baggio,Roberto,DNT1
+Lerouge,Robert,POEC Symfony
+Gogol,Alex,DNT2
+El Bakari,Jean-Francis,POEC Symfony
+El Zonzon,Victor,DNT1
+Levert,Yacine,POEC Symfony
+Di Francesco,Philippe,DNT2
+Lerouge,Robert,POEC Symfony
+Lenoir,Vincent,DNT1
+El Karlouch,René,POEC Symfony
+Baggio,Roberto,DNT1
+Lerouge,Robert,POEC Symfony
+Gogol,Alex,DNT2
+El Bakari,Jean-Francis,POEC Symfony
+El Zonzon,Victor,DNT1
+Levert,Yacine,POEC Symfony
+Di Francesco,Philippe,DNT2
+Lerouge,Robert,POEC Symfony
+Lenoir,Vincent,DNT1
+El Karlouch,René,POEC Symfony
