@@ -11,7 +11,7 @@
           echo '<li><a href="'. URL_BASE .'advert/index.php">Déposer une annonce</a></li>';
         }
 
-        echo '<li><a href="'. URL_BASE .'logout.php">'. $_SESSION['user'] .' (Déconnexion)</a></li>';
+        echo '<li>'.$_SESSION['user'].' <a href="'. URL_BASE .'logout.php">(Déconnexion)</a></li>';
       } else {
         echo '<li><a href="'. URL_BASE .'login.php">Connexion</a></li>';
       }

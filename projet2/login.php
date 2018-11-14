@@ -20,6 +20,7 @@ if (isset($_POST['submit'])) {
   $user = $query->fetch(PDO::FETCH_OBJ);
   if ($user) {
     $_SESSION['user'] = $user->pseudo;
+    $_SESSION['user_id'] = $user->id;
   }
 
 }
