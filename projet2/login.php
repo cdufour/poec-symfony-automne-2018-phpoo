@@ -20,7 +20,6 @@ if (isset($_POST['submit'])) {
   if ($user) {
     $_SESSION['user'] = $user->pseudo;
   }
-  var_dump($_SESSION);
 
 }
 ?>

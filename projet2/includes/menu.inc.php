@@ -1,14 +1,14 @@
 <nav>
   <ul>
     <li>
-      <a href="index.php">Accueil</a>
+      <?php echo '<a href="'. URL_BASE .'index.php">Accueil</a>'; ?>
     </li>
     <li>
       <?php
         if (isset($_SESSION['user'])) {
-          echo '<a href="logout.php">Déconnexion</a>';
+          echo '<a href="'. URL_BASE .'logout.php">'. $_SESSION['user'] .' (Déconnexion)</a>';
         } else {
-          echo '<a href="login.php">Connexion</a>';
+          echo '<a href="'. URL_BASE .'login.php">Connexion</a>';
         }
       ?>
     </li>

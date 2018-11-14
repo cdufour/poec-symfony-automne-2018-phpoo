@@ -1,6 +1,6 @@
 <?php
 session_start();
-echo 'Salut ' . $_SESSION['user'];
+include_once 'includes/settings.inc.php';
 
 ?>
 
