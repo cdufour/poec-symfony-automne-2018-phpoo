@@ -1,21 +1,7 @@
 <?php
-session_start();
-require_once '../classes/Access.php';
 include_once '../includes/settings.inc.php';
-$ok = false;
-
-if (isset($_SESSION['user'])) {
-  $access = new Access();
-  $role = $access->getRoleByPseudo($_SESSION['user']);
-
-  if ($role != false && $role->role == 'admin') {
-    $ok = true;
-  }
-}
-
-
+include_once '../includes/checkaccess.inc.php';
 ?>
-
 
  <!DOCTYPE html>
  <html lang="en" dir="ltr">
@@ -28,7 +14,7 @@ if (isset($_SESSION['user'])) {
        <?php include '../includes/menu.inc.php'; ?>
      </header>
 
-    <?php if($ok): ?>
+    <?php if($isUserAdmin): ?>
 
       <h2>Ajout d'une annonce</h2>
 

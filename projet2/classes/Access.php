@@ -1,5 +1,5 @@
 <?php
-require_once '../includes/db.inc.php';
+require_once PATH_BASE . 'includes/db.inc.php';
 
 class Access {
   private $pdo = null;

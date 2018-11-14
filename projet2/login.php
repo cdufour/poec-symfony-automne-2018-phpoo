@@ -1,5 +1,6 @@
 <?php
 session_start();
+include_once 'includes/settings.inc.php';
 require_once 'includes/db.inc.php';
 
 if (isset($_POST['submit'])) {
