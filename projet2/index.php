@@ -4,10 +4,8 @@ require_once PATH_BASE . 'includes/checkaccess.inc.php';
 require_once PATH_BASE . 'includes/db.inc.php';
 
 $pdo = connectToDb();
-
 $query = $pdo->prepare(
   'SELECT * FROM advert ORDER BY id DESC');
-
 $query->execute();
 $adverts = $query->fetchAll(PDO::FETCH_OBJ);
 

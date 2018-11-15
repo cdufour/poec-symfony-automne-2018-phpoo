@@ -8,7 +8,8 @@
 
         if (isset($isUserAdmin) && $isUserAdmin) {
           // l'utilisateur loggué est administrateur
-          echo '<li><a href="'. URL_BASE .'advert/index.php">Déposer une annonce</a></li>';
+          echo '<li><a href="'. URL_BASE .'advert/index.php">Mes annonces</a></li>';
+          echo '<li><a href="'. URL_BASE .'category/index.php">Catégories</a></li>';
         }
 
         echo '<li>'.$_SESSION['user'].' <a href="'. URL_BASE .'logout.php">(Déconnexion)</a></li>';

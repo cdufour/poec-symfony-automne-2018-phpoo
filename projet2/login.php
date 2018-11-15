@@ -21,6 +21,7 @@ if (isset($_POST['submit'])) {
   if ($user) {
     $_SESSION['user'] = $user->pseudo;
     $_SESSION['user_id'] = $user->id;
+    header('location:index.php');
   }
 
 }
@@ -31,10 +32,11 @@ if (isset($_POST['submit'])) {
   <head>
     <meta charset="utf-8">
     <title>Projet 2: Login</title>
+    <?php include PATH_BASE . 'includes/css.inc.php'; ?>
   </head>
   <body>
     <header>
-      <?php include 'includes/menu.inc.php'; ?>
+      <?php include PATH_BASE . 'includes/menu.inc.php'; ?>
     </header>
 
     <form method="post">

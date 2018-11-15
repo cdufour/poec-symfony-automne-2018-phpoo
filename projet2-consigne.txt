@@ -1,12 +1,10 @@
 *** Projet 2 ***
 
-Créer un système permettant d'enregistrer
-et de consulter des annonces de type
-don de matériel/vêtements/etc.
+Créer un système permettant d'enregistrer et de consulter des annonces
+de type don de matériel/vêtements/etc.
 
-Prévoir côté FRONT une recherche multicritères
-ex:
-- par type/Catégorie d'objets
+Prévoir côté FRONT une recherche multicritères, par exemple:
+- par catégories
 - par lieu
 - par mots-clés (nous verrons cela en cours)
 

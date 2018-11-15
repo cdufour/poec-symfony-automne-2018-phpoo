@@ -3,3 +3,12 @@ article.advert {
   margin-bottom: 20px;
   padding: 10px
 }
+
+header nav ul {
+  list-style: none
+}
+
+header nav ul li {
+  display: inline-block;
+  margin-right: 16px
+}
