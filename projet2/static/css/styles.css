@@ -17,6 +17,10 @@ header nav ul li {
   width: 400px
 }
 
+img.thumb {
+  height: 25px
+}
+
 img.xs {
   height: 50px
 }

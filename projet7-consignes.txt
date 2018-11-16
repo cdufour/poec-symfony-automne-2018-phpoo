@@ -1,7 +1,7 @@
 *** Projet 7: consignes ***
 
-Créer une petite application de gestion de suivi d'étudiants avec
-les entités suivantes:
+Créer une petite application de gestion de suivi d'étudiants
+avec les entités suivantes:
 
 - Student: id, lastname, firstname
 - Exam: id, date, topic
@@ -11,7 +11,7 @@ L'application permettra d'enregistrer:
 - des examens
 - la note obtenue par l'étudiant X à l'examen Y
 
-L'application affichera la liste des étudiants sous forme.
-Chaque étuidant de cette liste sera clicable, le clic
+L'application affichera la liste des étudiants.
+Chaque étudiant de cette liste sera clicable, le clic
 affichera une page de détails avec les notes obtenues
 et la moyenne de ces notes.

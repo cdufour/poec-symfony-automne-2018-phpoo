@@ -17,6 +17,7 @@ $categories = $query->fetchAll(PDO::FETCH_OBJ);
 $sql = 'SELECT advert.id AS advert_id,
   advert.title,
   advert.body,
+  advert.popularity,
   category.name,
   category.id AS category_id
   FROM advert
@@ -57,7 +58,7 @@ if (isset($_GET['categories'])) {
   //$bindings = [':in' => $in];
 }
 
-$sql .= ' ORDER BY advert.id DESC';
+$sql .= ' ORDER BY popularity DESC';
 $query = $pdo->prepare($sql);
 $query->execute($bindings);
 $rows = $query->fetchAll(PDO::FETCH_OBJ);
@@ -177,6 +178,9 @@ foreach($adverts as &$advert) {
         <div>
           <span>Catégories: </span>
           <?php echo implode(', ', $adverts[$i]['categories']); ?>
+        </div>
+        <div>
+          <img data-id="<?php echo $adverts[$i]['advert']->advert_id; ?>" class="thumb" src="<?php echo URL_BASE; ?>static/img/thumbs-up.png" alt=""><span><?php echo $adverts[$i]['advert']->popularity; ?></span>
         </div>
       </article>
     <?php endfor; ?>
