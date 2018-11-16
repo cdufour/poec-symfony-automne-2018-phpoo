@@ -12,3 +12,11 @@ header nav ul li {
   display: inline-block;
   margin-right: 16px
 }
+
+.long {
+  width: 400px
+}
+
+img.xs {
+  height: 50px
+}

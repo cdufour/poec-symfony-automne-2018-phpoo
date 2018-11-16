@@ -1,0 +1,17 @@
+*** Projet 2: consignes ***
+
+Créer un système permettant d'enregistrer et de consulter des annonces
+de type don de matériel/vêtements/etc.
+
+Prévoir côté FRONT une recherche multicritères, par exemple:
+- par catégories
+- par lieu
+- libre (full-text, nous verrons cela en cours)
+
+Bonus:
+- Permettre l'association de plusieurs photos à une annonce
+- Permettre d'évaluer les annonces: le client consultant
+une annonce pourra la "liker" (coeur clicable par exemple)
+A faire en ajax de préférence.
+- L'interface affichera en premier les annonces les plus
+appréciées

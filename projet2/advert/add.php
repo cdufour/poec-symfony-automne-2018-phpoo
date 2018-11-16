@@ -54,11 +54,43 @@ if (isset($_POST['submit'])) {
       }
     }
 
+    // 3/ traitement des images
+    foreach($_FILES as $file) {
+
+      if ($file['name'] != "") {
+        // l'un des inputs file a été utilsé
+        // normalement: vérifier size et type avant déplacement
+
+        // a/ déplacement de l'image
+        $result = move_uploaded_file(
+          $file['tmp_name'],
+          PATH_BASE . 'static/img/upload/' . $file['name']
+        );
+
+        // b/ enregistrement de l'image en DB
+        if ($result) {
+          $query = $pdo->prepare(
+            'INSERT INTO picture (url, advert_id)
+              VALUES (:url, :advert_id)');
+
+          $result = $query->execute([
+            ':url' => $file['name'],
+            ':advert_id' => $advert_id
+          ]);
+
+          if ($result) {
+            echo '<p>Image enregistrée</p>';
+          } else {
+            echo '<p>Echec</p>';
+          }
+        }
+
+      }
+    }
+
   } else {
     echo 'Echec';
   }
-
-
 
 }
 
@@ -80,7 +112,7 @@ if (isset($_POST['submit'])) {
 
       <h2>Ajout d'une annonce</h2>
 
-      <form method="post">
+      <form method="post" enctype="multipart/form-data">
         <input type="text" placeholder="Titre" name="title">
         <div>
           <label for="body">Description</label>
@@ -98,6 +130,11 @@ if (isset($_POST['submit'])) {
               }
             ?>
           </select>
+        </div>
+        <div>
+          <div>Image 1<input type="file" name="img1"></div>
+          <div>Image 2<input type="file" name="img2"></div>
+          <div>Image 3<input type="file" name="img3"></div>
         </div>
         <input type="submit" name="submit">
       </form>
